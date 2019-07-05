@@ -1,4 +1,5 @@
 var os = require('os'); // module os required to access os functions
+var colors = require('colors');
 
 function timeFormat () {
     var uptime = os.uptime();
@@ -8,7 +9,7 @@ function timeFormat () {
     var rminutes = minutes.toFixed(0);
     var seconds = (minutes - rminutes) * 60;
     var rseconds = seconds.toFixed(0);
-    return "Uptime : " + rhours + " hour(s) " + rminutes + " minute(s) and " + rseconds + " second(s)." ;
+    return "Uptime : ".green + rhours + " hour(s) " + rminutes + " minute(s) and " + rseconds + " second(s)." ;
 }
 
 exports.print = timeFormat; //export timeFormat function to use in OSinfo.js
